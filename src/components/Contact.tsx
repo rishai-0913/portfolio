@@ -180,7 +180,7 @@ export default function Contact() {
                     <LinkedInIcon size={15} />
                   </a>
                   <a
-                    href="https://github.com/rishabh-sharma"
+                    href="https://github.com/rishai-0913"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 rounded-lg bg-[#060C18] border border-[#1A2A42] text-[#7A90B0] hover:text-[#EEF4FF] hover:border-[#1A2A42] transition-all"
@@ -259,7 +259,7 @@ export default function Contact() {
               <div className="text-xs text-[#4A5F7A] mb-1">View full profile</div>
               <div className="flex items-center justify-center gap-2 text-sm font-medium text-[#4F7EFF] group-hover:gap-3 transition-all">
                 <LinkedInIcon size={14} />
-                linkedin.com/in/rishabh-sharma-040725221
+                Rishabh Sharma
               </div>
             </a>
           </motion.div>

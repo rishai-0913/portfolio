@@ -55,7 +55,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <span className="flex items-center gap-1.5 text-xs font-medium text-[#22D87A] bg-[#22D87A]/10 border border-[#22D87A]/20 px-3 py-1.5 rounded-full">
             <span className="w-1.5 h-1.5 bg-[#22D87A] rounded-full animate-pulse" />
-            Available for Hire
+            Open for Work
           </span>
           <button onClick={() => scrollTo("Contact")} className="btn-primary text-sm py-2 px-4">
             Let&apos;s Talk →

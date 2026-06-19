@@ -74,7 +74,7 @@ export default function Hero() {
           <motion.div custom={0} initial="hidden" animate="show" variants={fadeUp} className="flex flex-wrap items-center gap-2">
             <span className="flex items-center gap-1.5 text-xs font-semibold text-[#22D87A] bg-[#22D87A]/10 border border-[#22D87A]/20 px-3 py-1.5 rounded-full">
               <span className="w-1.5 h-1.5 bg-[#22D87A] rounded-full animate-pulse" />
-              Available for Hire
+              Open for Work
             </span>
             <span className="text-xs text-[#7A90B0] font-mono bg-[#0C1525] border border-[#1A2A42] px-3 py-1.5 rounded-full">
               3+ Years Experience · Open to Remote
@@ -117,7 +117,7 @@ export default function Hero() {
           </motion.div>
 
           <motion.div custom={5} initial="hidden" animate="show" variants={fadeUp} className="flex gap-3 pt-1">
-            <a href="https://github.com/rishabh-sharma" target="_blank" rel="noopener noreferrer"
+            <a href="https://github.com/rishai-0913" target="_blank" rel="noopener noreferrer"
               className="p-2.5 rounded-lg bg-[#0C1525] border border-[#1A2A42] text-[#7A90B0] hover:text-[#EEF4FF] hover:border-[#4F7EFF]/50 hover:bg-[#4F7EFF]/10 transition-all duration-200">
               <GitHubIcon size={18} />
             </a>
