@@ -14,7 +14,25 @@ const fadeUp = {
   }),
 };
 
-const projects = [
+type Project = {
+  title: string;
+  description: string;
+  tech: string[];
+  gradient: string;
+  accentColor: string;
+  link?: string;
+};
+
+const projects: Project[] = [
+  {
+    title: "DocuMind",
+    description:
+      "Upload any PDF, DOCX, or TXT and chat with it in natural language. RAG-powered with source citations and conversation memory.",
+    tech: ["LangChain", "Groq", "FastAPI", "ChromaDB"],
+    gradient: "from-[#22D87A]/20 to-[#06C8DA]/5",
+    accentColor: "#22D87A",
+    link: "https://docu-mind-seven-tawny.vercel.app/",
+  },
   {
     title: "Contract Intelligence System",
     description:
@@ -38,14 +56,6 @@ const projects = [
     tech: ["Python", "Claude API", "FastAPI", "Redis"],
     gradient: "from-[#A78BFA]/20 to-[#4F7EFF]/5",
     accentColor: "#A78BFA",
-  },
-  {
-    title: "Document Intelligence API",
-    description:
-      "Extract, structure, and query information from PDF and Word documents using advanced NLP techniques.",
-    tech: ["Python", "FastAPI", "Docker", "spaCy"],
-    gradient: "from-[#22D87A]/20 to-[#06C8DA]/5",
-    accentColor: "#22D87A",
   },
   {
     title: "Sentiment Analysis Service",
@@ -130,13 +140,25 @@ export default function Projects() {
                 >
                   <GitHubIcon size={14} /> GitHub
                 </button>
-                <button
-                  className="flex items-center gap-1.5 text-xs font-medium transition-colors"
-                  style={{ color: project.accentColor }}
-                  onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-                >
-                  <ExternalLink size={12} /> Request Case Study
-                </button>
+                {project.link ? (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 text-xs font-medium transition-colors hover:opacity-80"
+                    style={{ color: project.accentColor }}
+                  >
+                    <ExternalLink size={12} /> Live Demo
+                  </a>
+                ) : (
+                  <button
+                    className="flex items-center gap-1.5 text-xs font-medium transition-colors"
+                    style={{ color: project.accentColor }}
+                    onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                  >
+                    <ExternalLink size={12} /> Request Case Study
+                  </button>
+                )}
               </div>
             </motion.div>
           ))}
