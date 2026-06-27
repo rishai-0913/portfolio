@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ExternalLink } from "lucide-react";
 import { GitHubIcon } from "@/lib/icons";
+import Link from "next/link";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -21,6 +22,7 @@ type Project = {
   gradient: string;
   accentColor: string;
   link?: string;
+  linkLabel?: string;
 };
 
 const projects: Project[] = [
@@ -32,6 +34,16 @@ const projects: Project[] = [
     gradient: "from-[#22D87A]/20 to-[#06C8DA]/5",
     accentColor: "#22D87A",
     link: "https://docu-mind-seven-tawny.vercel.app/",
+  },
+  {
+    title: "Voxly",
+    description:
+      "Voice-to-notes mobile app that converts speech into structured summaries, key points, and action items in under 2 seconds. Powered by Groq Whisper + LLaMA 3.3.",
+    tech: ["React Native", "Expo", "Groq", "FastAPI"],
+    gradient: "from-[#7B5CFA]/20 to-[#A48BFF]/5",
+    accentColor: "#7B5CFA",
+    link: "/projects/voxly",
+    linkLabel: "View Project",
   },
   {
     title: "Contract Intelligence System",
@@ -141,15 +153,25 @@ export default function Projects() {
                   <GitHubIcon size={14} /> GitHub
                 </button>
                 {project.link ? (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-xs font-medium transition-colors hover:opacity-80"
-                    style={{ color: project.accentColor }}
-                  >
-                    <ExternalLink size={12} /> Live Demo
-                  </a>
+                  project.link.startsWith("/") ? (
+                    <Link
+                      href={project.link}
+                      className="flex items-center gap-1.5 text-xs font-medium transition-colors hover:opacity-80"
+                      style={{ color: project.accentColor }}
+                    >
+                      <ExternalLink size={12} /> {project.linkLabel ?? "Live Demo"}
+                    </Link>
+                  ) : (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 text-xs font-medium transition-colors hover:opacity-80"
+                      style={{ color: project.accentColor }}
+                    >
+                      <ExternalLink size={12} /> {project.linkLabel ?? "Live Demo"}
+                    </a>
+                  )
                 ) : (
                   <button
                     className="flex items-center gap-1.5 text-xs font-medium transition-colors"
